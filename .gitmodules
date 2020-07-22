@@ -1,0 +1,3 @@
+[submodule "sf-academy-exchange-microservice"]
+	path = sf-academy-exchange-microservice
+	url = https://github.com/ZhouJian26/sf-academy-exchange-microservice.git
