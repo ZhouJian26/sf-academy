@@ -1,0 +1,11 @@
+version: "3.0"
+
+services:
+  exchange_microservice:
+    build: ./sf-academy-exchange-microservice
+  api_server:
+    build: ./sf-academy-api
+    depends_on:
+      - exchange_microservice
+    ports:
+      - 80:3000
