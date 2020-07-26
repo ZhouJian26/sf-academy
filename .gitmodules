@@ -4,3 +4,6 @@
 [submodule "sf-academy-api"]
 	path = sf-academy-api
 	url = https://github.com/ZhouJian26/sf-academy-api.git
+[submodule "sf-academy-user-db"]
+	path = sf-academy-user-db
+	url = https://github.com/ZhouJian26/sf-academy-user-db.git
