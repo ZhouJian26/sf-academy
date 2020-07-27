@@ -3,12 +3,21 @@ version: "3.0"
 services:
   exchange_microservice:
     build: ./sf-academy-exchange-microservice
+
+  user_microservice:
+    build: ./sf-academy-user-microservice
+    depends_on:
+      - exchange_microservice
+      - user_db
+
   api_server:
     build: ./sf-academy-api
     depends_on:
       - exchange_microservice
+      - user_microservice
     ports:
       - 80:3000
+
   user_db:
     build: ./sf-academy-user-db
     command: --default-authentication-plugin=mysql_native_password
