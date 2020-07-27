@@ -9,6 +9,7 @@ services:
     depends_on:
       - exchange_microservice
       - user_db
+    env_file: ./sf-academy-user-microservice/.env
 
   api_server:
     build: ./sf-academy-api
