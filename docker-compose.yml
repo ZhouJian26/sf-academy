@@ -3,6 +3,8 @@ version: "3.0"
 services:
   exchange_microservice:
     build: ./sf-academy-exchange-microservice
+    ports:
+      - 9000:9000
 
   user_microservice:
     build: ./sf-academy-user-microservice
@@ -10,6 +12,8 @@ services:
       - exchange_microservice
       - user_db
     env_file: ./sf-academy-user-microservice/.env
+    ports:
+      - 9001:9001
 
   api_server:
     build: ./sf-academy-api
