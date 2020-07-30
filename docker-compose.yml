@@ -20,6 +20,7 @@ services:
     depends_on:
       - exchange_microservice
       - user_microservice
+    env_file: ./sf-academy-api/.env
     ports:
       - 80:3000
 
