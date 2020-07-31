@@ -10,3 +10,6 @@
 [submodule "sf-academy-user-microservice"]
 	path = sf-academy-user-microservice
 	url = https://github.com/ZhouJian26/sf-academy-user-microservice.git
+[submodule "sf-academy-webapp"]
+	path = sf-academy-webapp
+	url = https://github.com/ZhouJian26/sf-academy-webapp.git
