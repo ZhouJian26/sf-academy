@@ -22,7 +22,26 @@ services:
       - user_microservice
     env_file: ./sf-academy-api/.env
     ports:
-      - 80:3000
+      - 3000:3000
+
+  webapp_server:
+    build: ./sf-academy-webapp
+    depends_on:
+      - api_server
+    ports:
+      - 8080:3000
+    volumes:
+      - ./sf-academy-webapp/pages:/usr/src/app/pages
+      - ./sf-academy-webapp/components:/usr/src/app/components
+      - ./sf-academy-webapp/public:/usr/src/app/public
+
+  nginx_server:
+    build: ./sf-academy-nginx
+    depends_on:
+      - api_server
+    restart: always
+    ports:
+      - 80:80
 
   user_db:
     build: ./sf-academy-user-db
