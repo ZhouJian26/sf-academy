@@ -13,3 +13,6 @@
 [submodule "sf-academy-webapp"]
 	path = sf-academy-webapp
 	url = https://github.com/ZhouJian26/sf-academy-webapp.git
+[submodule "sf-academy-nginx"]
+	path = sf-academy-nginx
+	url = https://github.com/ZhouJian26/sf-academy-nginx.git
