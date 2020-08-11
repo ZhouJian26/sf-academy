@@ -11,7 +11,12 @@ services:
     depends_on:
       - exchange_microservice
       - user_db
-    env_file: ./sf-academy-user-microservice/.env
+    environment:
+      DB_USER: username
+      DB_PASSWORD: password
+      DB_DATABASE: sf_academy_exchange_db
+      DB_HOST: user_db
+      JWT_KEY: mammamia
     ports:
       - 9001:9001
 
@@ -41,6 +46,8 @@ services:
     restart: always
     ports:
       - 80:80
+    environment:
+      - WEBAPPURL=http://webapp_server:3000
 
   user_db:
     build: ./sf-academy-user-db
