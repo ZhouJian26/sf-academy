@@ -17,6 +17,34 @@ In this repo you can find terraform code to setup on AWS the entire sf-academy e
   |gh_webapp_url|string|GH url to the web application repo. ([webapplication](https://github.com/ZhouJian26/sf-academy-webapp))
   |gh_repo_docker_img|map|A map of all GH repo where is need to build a docker image and then upload into a ECR repository ([nginx](https://github.com/ZhouJian26/sf-academy-nginx), [api](https://github.com/ZhouJian26/sf-academy-api), [exchange](https://github.com/ZhouJian26/sf-academy-exchange-microservice), [user](https://github.com/ZhouJian26/sf-academy-user-microservice))
 
+```json
+// Sample
+aws_region = "eu-central-1"
+github_token = "your token"
+github_username = "gh username"
+webapp_bucket = "webapp s3 bucket name"
+gh_webapp_url = "gh webapp url"
+
+gh_repo_docker_img = {
+    nginx = {
+        image_name = "nginx"
+        git_url = "gh_url"
+    }
+    exchange_microservice = {
+        image_name = "exchange_microservice"
+        git_url = "gh_url"
+    }
+    user_microservice = {
+        image_name = "user_microservice"
+        git_url = "gh_url"
+    }
+    api_webserver = {
+        image_name = "api_webserver"
+        git_url = "gh_url"
+    }
+}
+```
+
 ### Get Started
 
 1. `terraform init`

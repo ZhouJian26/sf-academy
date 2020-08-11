@@ -21,14 +21,14 @@ This is a platform that enables users to exchange a currency to another, deposit
 
 ### More Information
 
-- [web application]()
-- [nginx server]()
-- [api server]()
-- [exchange microservice]()
-- [user microservice]()
-- [user database]()
-- [cicd infrastructure]()
-- [application infrastructure]()
+- [web application](https://github.com/ZhouJian26/sf-academy-webapp)
+- [nginx server](https://github.com/ZhouJian26/sf-academy-nginx)
+- [api server](https://github.com/ZhouJian26/sf-academy-api)
+- [exchange microservice](https://github.com/ZhouJian26/sf-academy-exchange-microservice)
+- [user microservice](https://github.com/ZhouJian26/sf-academy-user-microservice)
+- [user database](https://github.com/ZhouJian26/sf-academy-user-db)
+- [cicd infrastructure](https://github.com/ZhouJian26/sf-academy/tree/master/sf-academy-infrastructure-cicd)
+- [application infrastructure](https://github.com/ZhouJian26/sf-academy/tree/master/sf-academy-infrastructure-backend)
 
 ### Deploy in AWS
 
