@@ -455,3 +455,8 @@ resource "aws_cloudwatch_log_group" "backend" {
   name = "sf-academy-ecs-group/backend"
   retention_in_days = 1
 }
+## Output
+
+output application_url {
+  value = aws_alb.main.dns_name
+}
