@@ -30,7 +30,8 @@ resource "aws_s3_bucket" "webapp_bucket" {
   bucket = var.webapp_bucket
   acl = "public-read"
   policy = data.template_file.webapp_policy.rendered
-
+  force_destroy = true
+  
   website {
     index_document = "index.html"
     error_document = "error.html"
