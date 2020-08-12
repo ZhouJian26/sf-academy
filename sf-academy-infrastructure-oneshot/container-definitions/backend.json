@@ -1,0 +1,79 @@
+[
+  {
+    "name": "nginx_server",
+    "image": "${nginx_image}",
+    "memory": 128,
+    "cpu": 128,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "environment": [{ "name": "WEBAPPURL", "value": "${WEBAPPURL}" }],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "sf-academy-ecs-group/backend",
+        "awslogs-region": "eu-central-1",
+        "awslogs-stream-prefix": "nginx_server"
+      }
+    },
+    "links": ["api_server"]
+  },
+  {
+    "name": "api_server",
+    "image": "${api_image}",
+    "memory": 256,
+    "cpu": 128,
+    "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "sf-academy-ecs-group/backend",
+        "awslogs-region": "eu-central-1",
+        "awslogs-stream-prefix": "api_server"
+      }
+    },
+    "links": ["exchange_microservice", "user_microservice"]
+  },
+  {
+    "name": "exchange_microservice",
+    "image": "${exchange_image}",
+    "memory": 128,
+    "cpu": 128,
+    "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "sf-academy-ecs-group/backend",
+        "awslogs-region": "eu-central-1",
+        "awslogs-stream-prefix": "exchange_microservice"
+      }
+    }
+  },
+  {
+    "name": "user_microservice",
+    "image": "${user_image}",
+    "memory": 256,
+    "cpu": 128,
+    "essential": true,
+    "environment": [
+      { "name": "DB_HOST", "value": "${DB_HOST}" },
+      { "name": "DB_USER", "value": "${DB_USER}" },
+      { "name": "DB_PASSWORD", "value": "${DB_PASSWORD}" },
+      { "name": "DB_DATABASE", "value": "${DB_DATABASE}" },
+      { "name": "JWT_KEY", "value": "${JWT_KEY}" }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "sf-academy-ecs-group/backend",
+        "awslogs-region": "eu-central-1",
+        "awslogs-stream-prefix": "user_microservice"
+      }
+    },
+    "links": ["exchange_microservice"]
+  }
+]
