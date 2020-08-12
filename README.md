@@ -26,7 +26,7 @@ This is a platform that enables users to exchange a currency to another, deposit
 1. `git clone --recursive https://github.com/ZhouJian26/sf-academy.git`
 2. `cd sf-academy/sf-academy-infrastructure-oneshot`
 3. `terraform init`
-4. `terraform apply`
+4. `terraform apply`  
    and then
 5. `terraform destroy`
 
@@ -34,6 +34,7 @@ This is a platform that enables users to exchange a currency to another, deposit
 
 - you **must** have docker and terraform installed
 - you **must** have aws account configured
+- **infrastructure is not fully covered by the free tier AWS account**, thus some charges on the account will be done. Remember to destroy the infrastructure to avoid further charges.
 
 ![AWS Infrastructure](./img/aws_infrastructure.png)
 
