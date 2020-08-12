@@ -35,6 +35,8 @@ This is a platform that enables users to exchange a currency to another, deposit
 - you **must** have docker and terraform installed
 - you **must** have aws account configured
 
+![AWS Infrastructure](./img/aws_infrastructure.png)
+
 ### More Information
 
 - [web application](https://github.com/ZhouJian26/sf-academy-webapp)
